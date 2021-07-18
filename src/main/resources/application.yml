@@ -1,3 +1,14 @@
 micronaut:
   application:
     name: ecommerceRestFrete
+
+# definição do grpc e por tipo de servico, defino c canal se preferir
+grpc:
+  client:
+    plaintext: true
+    max-retry-attempts: 10
+  channels:
+    fretes:
+      address: 'localhost:50051'
+      plaintext: true
+      max-retry-attempts: 10

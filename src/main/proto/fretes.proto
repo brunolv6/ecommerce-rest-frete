@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.ccom.zup.edu";
+option java_outer_classname = "Fretes";
+option objc_class_prefix = "HLW";
+
+package br.ccom.zup.edu;
+
+service FretesService {
+  rpc send (FretesRequest) returns (FretesReply) {}
+
+  rpc calculaFrete(CalculoFreteRequest) returns (CalculoFreteResponse) {}
+}
+
+message CalculoFreteRequest {
+  string cep = 1;
+}
+
+message CalculoFreteResponse {
+  string cep = 1;
+  double valor = 2;
+}
+
+message FretesRequest {
+  string name = 1;
+}
+
+message FretesReply {
+  string message = 1;
+}
